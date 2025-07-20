@@ -141,39 +141,39 @@ The AI Scheduling Assistant was designed to streamline the process of meeting sc
 
 ## Workflow
 
-# Input Parsing:
+### Input Parsing:
 
 - The EmailParsingAgent interprets the email content to extract meeting details (e.g., proposed time, duration, subject, and attendees).
 
-# Initial Proposal Creation:
+### Initial Proposal Creation:
 
 - The SchedulingOrchestrator creates an initial meeting proposal based on parsed details.
 
-# Calendar Retrieval:
+### Calendar Retrieval:
 
 All participants' calendar events are retrieved for analysis via integration with Google Calendar APIs.
 
-# Conflict Detection:
+### Conflict Detection:
 
 - The CalendarAnalysisAgent identifies conflicts by comparing the proposed time against participants' schedules.
 - Conflicts are categorized as none, low, medium, or high.
 
-# Conflict Resolution:
+### Conflict Resolution:
 
 - The NegotiationAgent proposes alternative times using strategies like:
 - next_day_same_time: Move to the next day while keeping the same time.
 - next_available_day: Skip to the next completely free day.
 - same_day_shift: Adjust the time on the same day to avoid short conflicts.
 
-# Polite Communication:
+### Polite Communication:
 
 - The NegotiationLanguageAgent generates professional emails to communicate proposed changes to participants.
 
-# Iteration:
+### Iteration:
 
 - If conflicts persist, the process is repeated for up to 5 negotiation rounds or until a conflict-free solution is found.
 
-# Finalization:
+### Finalization:
 
 - The orchestrator consolidates all data into a structured response, including the final schedule, metadata, and logs of negotiation steps.
 
